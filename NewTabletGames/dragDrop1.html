@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Drag and Drop Game</title>
+		<script src="js/function.js"></script>
+		<script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+		
+		<script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+		
+		
+
+		
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<script>
+			function backtoMenu(){
+				location.replace("index.html");
+			}
+		</script>
+
+		<div id="div1" touchenter="itemEnter(event)">
+			<img src="img/fridge.jpg" >
+		</div>
+
+		
+		<img id="pizza" src="img/pizza.jpg" draggable="true" ondrag="recordDrag(this);">
+		<img id="apple" src="img/apple.png" draggable="true" ondrag="recordDrag(this);">
+		<img id="banana" src="img/banana.jpg" draggable="true" ondrag="recordDrag(this);">
+		<img id="orange" src="img/orange.jpg" draggable="true" ondrag="recordDrag(this);">
+		<img id="watermelon" src="img/watermelon.jpg" draggable="true" ondrag="recordDrag(this);">
+		<img id="milk" src="img/milk.png" draggable="true" ondrag="recordDrag(this);">
+		
+		
+		<p1 id="goal"></p1>
+		<p1 id="goal1"></p1>
+		<p1 id="debug"></p1>
+		<img id="goBack" src="img/goBack.png" onclick="backtoMenu()">
+
+		<Button id="finish" onclick="checkAnswer()">Done</Button>
+	</body>
+</html>

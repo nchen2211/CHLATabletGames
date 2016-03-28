@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Drag and Drop Game</title>
+		<script src="js/function.js"></script>
+		<script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+		
+		<script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+		
+		
+
+		
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<script>
+			function backtoMenu(){
+				location.replace("index.html");
+	
+		}
+		</script>
+
+		<div id="destination">
+			<img id = "destinationImg" src="img/robot.png" >
+		</div>
+		
+		<h1> Drag all the pillows to the robot's hand.</h1>
+		
+		<img id="pillow1" src="img/pillow1.png" draggable="true" ondrag="recordDrag(this);">
+		<img id="pillow2" src="img/pillow1.png" draggable="true" ondrag="recordDrag(this);">
+		<img id="pillow3" src="img/pillow3.png" draggable="true" ondrag="recordDrag(this);">
+	
+		<p1 id="goal"></p1>
+		<p1 id="goal1"></p1>
+		<p1 id="debug"></p1>
+		<p1 id="debug1"></p1>
+		
+		<Button id="finish" onclick="checkAnswer()">Next</Button>
+	</body>
+</html>

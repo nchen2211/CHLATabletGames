@@ -1,0 +1,66 @@
+#heart {
+
+	margin-top: 50px;
+	margin-left: 500px;
+}
+
+#lung1
+{
+	background:red;
+	border-radius:500px;
+	height:200px;
+	width:200px;
+	left: 750px;
+	position: absolute;
+	top: 250px;
+
+	transition:     width 5000ms, height 5000ms, border-radius 5000ms,left 5000ms, top 5000ms;
+    -moz-transition:    width 5000ms, height 5000ms, border-radius 5000ms,left 5000ms, top 5000ms;
+    -ms-transition:     width 5000ms, height 5000ms, border-radius 5000ms,left 5000ms, top 5000ms;
+    -o-transition:      width 5000ms, height 5000ms, border-radius 5000ms,left 5000ms, top 5000ms;
+    -webkit-transition: width 5000ms, height 5000ms, border-radius 5000ms,left 5000ms, top 5000ms;
+
+}
+
+#lung2
+{
+	background:red;
+	border-radius:500px;
+	height:200px;
+	width:200px;
+	left: 350px;
+	position: absolute;
+	top: 250px;
+
+	transition:     width 5000ms, height 5000ms, border-radius 5000ms,left 5000ms, top 5000ms;
+    -moz-transition:    width 5000ms, height 5000ms, border-radius 5000ms,left 5000ms, top 5000ms;
+    -ms-transition:     width 5000ms, height 5000ms, border-radius 5000ms,left 5000ms, top 5000ms;
+    -o-transition:      width 5000ms, height 5000ms, border-radius 5000ms,left 5000ms, top 5000ms;
+    -webkit-transition: width 5000ms, height 5000ms, border-radius 5000ms,left 5000ms, top 5000ms;
+
+}
+
+#heart:hover #lung1{
+
+	border-radius:1000px;
+	height:400px;
+	width:400px;
+	left: 750px;
+	top: 250px;
+	
+}
+
+#heart:hover #lung2{
+
+	border-radius:1000px;
+	height:400px;
+	left: 250px;
+	top: 250px;
+	width:400px;
+}
+
+
+
+
+
+

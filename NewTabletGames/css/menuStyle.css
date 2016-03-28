@@ -1,0 +1,48 @@
+#DragDrop{
+    -webkit-border-radius: 12;
+      -moz-border-radius: 12;
+      border-radius: 14px;
+      font-family: Arial;
+      color: #ffffff;
+      font-size: 40px;
+      background: #3498db;
+      padding: 10px 20px 10px 20px;
+      text-decoration: none;
+      position: absolute;
+}
+
+#DragDrop:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+#MusicBox{
+  -webkit-border-radius: 12;
+      -moz-border-radius: 12;
+      border-radius: 14px;
+      font-family: Arial;
+      color: #ffffff;
+      font-size: 40px;
+      background: #3498db;
+      padding: 10px 20px 10px 20px;
+      text-decoration: none;
+      position: absolute;
+}
+
+#MusicBox:hover{
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+
+

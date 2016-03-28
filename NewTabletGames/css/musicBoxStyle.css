@@ -1,0 +1,71 @@
+#parentIndent{
+	float: left;
+	width: 1050px;
+}
+
+#parentIndent section{
+	float:left;
+}
+
+#indent1{
+	width: 250px;
+}
+
+#indent2{
+	width: 800px;
+}
+
+div{
+	width: 40%;
+
+	float:left;
+}
+
+#muzi{
+	width: 70px;
+	height: 70px;
+	position: relative;
+	
+}
+
+#jay-g{
+	width: 70px;
+	height: 70px;
+	position: relative;
+	
+}
+
+#neo{
+	width: 70px;
+	height: 70px;
+	position: relative;
+	
+}
+
+#frodo{
+	width: 70px;
+	height: 70px;
+	position: relative;
+}
+
+#tube{
+	width: 70px;
+	height: 70px;
+	position: relative;
+}
+
+#apeach{
+	width: 70px;
+	height: 70px;
+	position: relative;
+}
+
+div.box{
+	width: 110px;
+	height: 84px;
+	border-style: solid;
+    border-color: black;
+    margin-right: 1px;
+}
+
+

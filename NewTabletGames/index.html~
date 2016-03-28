@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Main Menu</title>
+		<script src="js/menuFunction.js"></script>
+		<script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+		<script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+		<link rel="stylesheet" href="css/menuStyle.css">
+	</head>
+	<body>
+		<script>
+			function dragClicked(){
+    			location.replace("dragDrop.html");
+
+			}
+
+			function musicClicked(){
+				location.replace("musicBox.html");
+
+			}
+			
+		</script>
+		<Button id="DragDrop" onclick="dragClicked()">Drag and Drop Game</Button>
+		<Button id="MusicBox" onclick="musicClicked()">Music Box</Button>
+		
+
+		
+	</body>
+</html>
