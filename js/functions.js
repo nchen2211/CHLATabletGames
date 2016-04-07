@@ -62,8 +62,9 @@ function setup(){
 	var ros = new ROSLIB.Ros({
 		//Use the localhost one if running in on the laptop only
 		//Use the local IP if accessing it from tablet
-
-		url: 'ws://192.168.5.179:9090'
+		
+		url: 'ws://192.168.0.21:9090'
+		//url: 'ws://192.168.5.179:9090'
 		//url: 'ws://localhost:9090'
 	});
 
@@ -85,6 +86,10 @@ function setup(){
 		messageType: 'std_msgs/String'
 
 	});
+
+	start_dressUp();
+
+	
 
 	//maps of Maki's wardrobe components for ROS message purposes
 	//hats map
@@ -305,6 +310,15 @@ function submit(){
 		*/
 	});
 	
+	main_topic.publish(message);
+}
+
+function start_dressUp(){
+
+	var message = new ROSLIB.Message({
+		data: "Starting the dress up game!"
+	});
+
 	main_topic.publish(message);
 }
 
