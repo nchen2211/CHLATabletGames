@@ -20,11 +20,13 @@ var maki_hat = [
 	"maki_hat3.png"
 ];
 
-var maki_glasses = [
-	"maki_glasses1.png",
-	"maki_glasses2.png",
-	"maki_glasses3.png"
-	
+var maki_mouth = [
+	"mouthBlue.png",
+	"mouthGreen.png",
+	"mouthCyan.png",
+	"mouthRed.png",
+	"mouthYellow.png",
+	"mouthMagenta.png"	
 ];
 
 var maki_face = [
@@ -97,10 +99,14 @@ function setup(){
 	mapHat[1] = "yellow hat";
 	mapHat[2] = "blue hat";
 
-	//glasses map
-	mapGlasses[0] = "studying glasses";
-	mapGlasses[1] = "costume glasses";
-	mapGlasses[2] = "yellow glasses";
+	//mouth map
+	mapMouth[0] = "blue mouth";
+	mapMouth[1] = "green mouth";
+	mapMouth[2] = "cyan mouth";
+	mapMouth[3] = "red mouth";
+	mapMouth[4] = "yellow mouth";
+	mapMouth[5] = "magenta mouth";
+
 
 	//eyes map
 	mapEyes[0] = "pink eyes";
@@ -152,29 +158,31 @@ function change_next_Hat(){
 }
 
 var x = 0;
-function change_prev_Glasses(){
+function change_prev_Mouth(){
 
 	x = x - 1;
 	if(x == -1)
-		x = 2;
+		x = 5;
 
 	console.log(x);
-	var glasses = maki_glasses[x];
+	var mouth = maki_mouth[x];
+	console.log(mouth);
 	
-	document.getElementById('glasses_maki').src = "image/" + glasses;
+	document.getElementById('mouth_maki').src = "image/" + mouth;
 }
 
-function change_next_Glasses(){
+function change_next_Mouth(){
 
 	x = x + 1;
 
-	if(x == 3)
+	if(x == 6)
 		x = 0;
 
 	console.log(x);
-	var glasses = maki_glasses[x];
+	var mouth = maki_mouth[x];
+	console.log(mouth);
 	
-	document.getElementById('glasses_maki').src = "image/" + glasses;
+	document.getElementById('mouth_maki').src = "image/" + mouth;
 }
 
 var j = 0;
@@ -295,7 +303,7 @@ function submit(){
 		//Add by Xuan, 11, Feb		
 		data :  "Dress" + ',' + mapHat[i] + "," +
 			mapEyes[j] + "," +
-			mapGlasses[x] + "," +
+			mapMouth[x] + "," +
 			mapClothes[m] + "," +
 			mapShoes[n] + "," +
 			mapAcc[y] + ","
