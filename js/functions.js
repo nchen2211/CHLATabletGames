@@ -8,50 +8,58 @@ var topic6;
 var main_topic;
 
 var mapHat = {};
-var mapGlasses = {};
+var mapMouth = {};
 var mapEyes = {};
 var mapClothes ={};
 var mapShoes = {};
 var mapAcc = {};
 
 var maki_hat = [
-	"maki_hat1.png",
-	"maki_hat2.png",
-	"maki_hat3.png"
+	"empty.png",
+	"hat_astronaut.png",
+	"hat_clown.png",
+	"hat_wizard.png",
+	"hat_dino.png"	
 ];
 
 var maki_mouth = [
-	"mouthBlue.png",
-	"mouthGreen.png",
-	"mouthCyan.png",
-	"mouthRed.png",
-	"mouthYellow.png",
-	"mouthMagenta.png"	
+	"mouth_red.png",	
+	"mouth_blue.png",
+	"mouth_green.png",
+	"mouth_cyan.png",
+	"mouth_yellow.png",
+	"mouth_magenta.png",
 ];
 
 var maki_face = [
-	"maki_face1.png",
-	"maki_face2.png",
-	"maki_face3.png"
-	
+	"empty.png",
+	"face_astronaut.png",
+	"face_clown.png",
+	"face_wizard.png"
 ];
 
 var maki_body = [
-	"maki_body1.png",
-	"maki_body2.png",
-	"maki_body3.png"
+	"empty.png",
+	"body_astronaut.png",
+	"body_clown.png",
+	"body_wizard.png",	
+	"body_dinosaur.png"
 ];
 
 var maki_feet = [
-	"maki_feet1.png",
-	"maki_feet2.png",
-	"maki_feet3.png"	
+	"base_feet.png",
+	"feet_astro.png",
+	"feet_clown.png",
+	"feet_wizard.png",	
+	"feet_dino.png"	
 ];
 
 var maki_acc = [
-	"maki_acc1.png",
-	"maki_acc2.png",
-	"maki_acc3.png"	
+	"empty.png",
+	"acc_astronaut.png",
+	"acc_clown.png",
+	"acc_wizard.png",
+	"acc_dinosaur.png"
 ];
 
 //Connecting to ROS
@@ -66,7 +74,7 @@ function setup(){
 		//Use the local IP if accessing it from tablet
 		
 		url: 'ws://192.168.0.21:9090'
-		//url: 'ws://192.168.5.179:9090'
+		//url: 'ws://192.168.5.52:9090'
 		//url: 'ws://localhost:9090'
 	});
 
@@ -89,24 +97,29 @@ function setup(){
 
 	});
 
-	start_dressUp();
-
-	
+	start_dressUp(); // publish welcome ROS message 
 
 	//maps of Maki's wardrobe components for ROS message purposes
 	//hats map
-	mapHat[0] = "red hat";
-	mapHat[1] = "yellow hat";
-	mapHat[2] = "blue hat";
+	mapHat[0] = "no hat";
+	mapHat[1] = "astrounaut helmet";
+	mapHat[2] = "wizard hat";
+	mapHat[3] = "clown hat";
+	mapHat[4] = "dinosaur hat";
 
 	//mouth map
-	mapMouth[0] = "blue mouth";
-	mapMouth[1] = "green mouth";
-	mapMouth[2] = "cyan mouth";
-	mapMouth[3] = "red mouth";
+	mapMouth[0] = "red mouth";
+	mapMouth[1] = "blue mouth";
+	mapMouth[2] = "green mouth";
+	mapMouth[3] = "cyan mouth";
 	mapMouth[4] = "yellow mouth";
 	mapMouth[5] = "magenta mouth";
 
+	// face accessories map
+	mapFace[0] = "no face accessory";
+	mapFace[1] = "astronaut face accessory";
+	mapFace[2] = "wizard eye";
+	mapFace[3] = "clown face";
 
 	//eyes map
 	mapEyes[0] = "pink eyes";
@@ -114,29 +127,34 @@ function setup(){
 	mapEyes[2] = "yellow eyes";
 
 	//clothes map
-	mapClothes[0] = "white clothing";	
-	mapClothes[1] = "pink clothing";
-	mapClothes[2] = "blue clothing";
+	mapClothes[0] = "no costume";
+	mapClothes[1] = "astronaut costume";	
+	mapClothes[2] = "clown costume";
+	mapClothes[3] = "wizard costume";
+	mapClothes[4] = "dinosaur costume";
 
 	//shoes map
-	mapShoes[0] = "pink shoes";
-	mapShoes[1] = "blue shoes";
-	mapShoes[2] = "yellow shoes";
+	mapShoes[0] = "regular shoes";
+	mapShoes[1] = "astronaut shoes";
+	mapShoes[2] = "clown shoes";
+	mapShoes[3] = "wizard shoes";
+	mapShoes[4] = "dinosaur shoes";
 
 	//accessory
-	mapAcc[0] = "green cat";
-	mapAcc[1] = "blue cat";
-	mapAcc[2] = "pink cat";
+	mapAcc[0] = "no accessory";
+	mapAcc[1] = "a flag";
+	mapAcc[2] = "a horn";
+	mapAcc[3] = "a wand";
+	mapAcc[4] = "a mini dinosaur";
 
 }
 
 var i = 0;
 function change_prev_Hat(){
 
-	
 	i = i - 1;
 	if(i == -1)
-		i = 2;
+		i = 4;
 	
 	console.log("Number; " + i);
 	var hat = maki_hat[i];
@@ -148,7 +166,7 @@ function change_prev_Hat(){
 function change_next_Hat(){
 
 	i = i + 1;
-	if(i == 3)
+	if(i == 5)
 		i = 0;
 
 	console.log(i);
@@ -175,7 +193,7 @@ function change_next_Mouth(){
 
 	x = x + 1;
 
-	if(x == 6)
+	if(x == 7)
 		x = 0;
 
 	console.log(x);
@@ -190,7 +208,7 @@ function change_prev_Face(){
 
 	j = j - 1;
 	if(j == -1)
-		j = 2;
+		j = 3;
 
 	console.log(j);
 	var face = maki_face[j];
@@ -202,7 +220,7 @@ function change_next_Face(){
 
 	j = j + 1;
 
-	if(j == 3)
+	if(j == 4)
 		j = 0;
 
 	console.log(j);
@@ -217,7 +235,7 @@ function change_prev_Body(){
 
 	m = m - 1;
 	if(m == -1)
-		m = 2;
+		m = 4;
 
 	console.log(m);
 	var body = maki_body[m];
@@ -230,7 +248,7 @@ function change_next_Body(){
 
 	m = m + 1;
 
-	if(m == 3)
+	if(m == 6)
 		m = 0;
 	
 	console.log(m);
@@ -245,7 +263,7 @@ function change_prev_Feet(){
 
 	n = n - 1;
 	if(n == -1)
-		n = 2;
+		n = 4;
 
 	console.log(n);
 	var feet = maki_feet[n];
@@ -258,7 +276,7 @@ function change_next_Feet(){
 
 	n = n + 1;
 
-	if(n == 3)
+	if(n == 6)
 		n = 0;
 
 	console.log(n);
@@ -273,7 +291,7 @@ function change_prev_Acc(){
 
 	y = y - 1;
 	if(y == -1)
-		y = 2;
+		y = 4;
 
 	console.log(y);
 	var acc = maki_acc[y];
@@ -286,7 +304,7 @@ function change_next_Acc(){
 
 	y = y + 1;
 
-	if(y == 3)
+	if(y == 6)
 		y = 0;
 
 	console.log(y);
