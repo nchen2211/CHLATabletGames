@@ -9,7 +9,7 @@ var main_topic;
 
 var mapHat = {};
 var mapMouth = {};
-var mapEyes = {};
+var mapFace = {};
 var mapClothes ={};
 var mapShoes = {};
 var mapAcc = {};
@@ -121,11 +121,6 @@ function setup(){
 	mapFace[2] = "wizard eye";
 	mapFace[3] = "clown face";
 
-	//eyes map
-	mapEyes[0] = "pink eyes";
-	mapEyes[1] = "blue eyes";
-	mapEyes[2] = "yellow eyes";
-
 	//clothes map
 	mapClothes[0] = "no costume";
 	mapClothes[1] = "astronaut costume";	
@@ -156,8 +151,9 @@ function change_prev_Hat(){
 	if(i == -1)
 		i = 4;
 	
-	console.log("Number; " + i);
+	console.log(i);
 	var hat = maki_hat[i];
+	console.log(hat);
 
 	document.getElementById('hat_maki').src = "image/" + hat;
 	
@@ -171,6 +167,7 @@ function change_next_Hat(){
 
 	console.log(i);
 	var hat = maki_hat[i];
+	console.log(hat);
 
 	document.getElementById('hat_maki').src = "image/" + hat;
 }
@@ -212,6 +209,7 @@ function change_prev_Face(){
 
 	console.log(j);
 	var face = maki_face[j];
+	console.log(face);
 	
 	document.getElementById('face_maki').src = "image/" + face;
 }
@@ -225,6 +223,7 @@ function change_next_Face(){
 
 	console.log(j);
 	var face = maki_face[j];
+	console.log(face);
 	
 	document.getElementById('face_maki').src = "image/" + face;
 
@@ -239,6 +238,7 @@ function change_prev_Body(){
 
 	console.log(m);
 	var body = maki_body[m];
+	console.log(body);
 	
 	document.getElementById('body_maki').src = "image/" + body;
 
@@ -253,6 +253,7 @@ function change_next_Body(){
 	
 	console.log(m);
 	var body = maki_body[m];
+	console.log(body);
 	
 	document.getElementById('body_maki').src = "image/" + body;
 
@@ -267,6 +268,7 @@ function change_prev_Feet(){
 
 	console.log(n);
 	var feet = maki_feet[n];
+	console.log(feet);
 	
 	document.getElementById('feet_maki').src = "image/" + feet;
 	
@@ -281,6 +283,7 @@ function change_next_Feet(){
 
 	console.log(n);
 	var feet = maki_feet[n];
+	console.log(feet);
 	
 	document.getElementById('feet_maki').src = "image/" + feet;
 	
@@ -295,6 +298,7 @@ function change_prev_Acc(){
 
 	console.log(y);
 	var acc = maki_acc[y];
+	console.log(acc);
 	
 	document.getElementById('acc_maki').src = "image/" + acc;
 };
@@ -309,6 +313,7 @@ function change_next_Acc(){
 
 	console.log(y);
 	var acc = maki_acc[y];
+	console.log(acc);
 	
 	document.getElementById('acc_maki').src = "image/" + acc;
 
@@ -320,11 +325,11 @@ function submit(){
 	var message = new ROSLIB.Message({
 		//Add by Xuan, 11, Feb		
 		data :  "Dress" + ',' + mapHat[i] + "," +
-			mapEyes[j] + "," +
+			mapFace[j] + "," +
 			mapMouth[x] + "," +
 			mapClothes[m] + "," +
 			mapShoes[n] + "," +
-			mapAcc[y] + ","
+			mapAcc[y] 
 		/* 
 		//origin code
 		data : "Maki is wearing " + mapHat[i] + "\n" +
