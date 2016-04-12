@@ -8,7 +8,6 @@ html{
 body {
 
 	width: 800px;
-	height: relative;
 }
 
 .index-bg{
@@ -17,6 +16,8 @@ body {
 
 .dressUp-bg{
 	background-image: url("../image/BETA BG.png");
+	width: 1500px;
+	background-repeat: no-repeat;
 }
 
 .IV-bg{
@@ -57,78 +58,157 @@ body {
 
 #PrevButton{
 	margin-left: 800px;
-	margin-top: 145px;
+	margin-top: -20px;
+	position: absolute;
 }
 
-#PrevButton .invisible{
-	opacity: 0;
-}
-
-#PrevButton li{
+#PrevButton li{ /*this is actually next arrow*/
 	list-style-type : none;
-	padding-top: 20px;
 }
-
-/*#hat {
-
-	padding-left: 200px;
-}*/
 
 #NextButton{
 	padding-left: 250px;
-	margin-top: -510px;
-}
-
-#NextButton .invisible{
-	opacity: 0;
+	margin-top: -20px;
+	position: absolute;
 }
 
 #NextButton li{
 	list-style-type : none;
-	padding-top: 20px;
 	padding-right: 300px;
 }
 
-#prev_acc {
-
-	margin-left: 975px;
-	margin-top: -350px;
+/* arrow locations*/
+#prevHat {
+	margin-left: -60px;
 }
 
-#next_acc {
-
-	margin-left: 975px;
-	margin-top: -50px;
+#nextHat {
+	padding-left: 80px;
 }
 
-#Maki{
-	margin: -495px 0px 0px 450px;
-	
+#prevFace {
+	padding-top: 40px;
+	margin-left: -20px;
+}
+
+#nextFace {
+	padding-top: 40px;
+	padding-left: 60px;
+}
+
+#prevMouth {
+	padding-top: 10px;
+	margin-left: -90px;
+}
+
+#nextMouth {
+	padding-top: 10px;
+	padding-left: 120px;
+}
+
+#prevBody {
+	padding-top: 20px;
+	margin-left: -120px;
+}
+
+#nextBody {
+	padding-top: 20px;
+	padding-left: 130px;
+}
+
+#prevFeet {
+	padding-top: 30px;
+	margin-left: -40px;
+}
+
+#nextFeet {
+	padding-top: 30px;
+	padding-left: 120px;
+}
+
+#prevAcc {
+	margin-left: 170px;
+	margin-top: -360px;
+}
+
+#nextAcc {
+	margin-left: 170px;
+	padding-top: 250px;
+	margin-top: -80px;
+}
+
+
+/* Maki's base object*/
+
+#base_head {
+	width: 1000px;
+	height: auto;
+	margin-top: -19px;	
+	margin-left: 130px;
+	position: absolute;
+}
+
+#base_body {
+	width: 1000px;
+	height: auto;
+	margin-top: -30px;	
+	margin-left: 130px;
+	position: absolute;
+}
+
+#base_feet {
+	width: 1000px;
+	height: auto;
+	margin-top: -10px;	
+	margin-left: 130px;
+	position: absolute;
 }
 
 #hat_maki {
-	margin-top: -75px;
+	width: 910px;
+	height: auto;
+	margin-top: -55px;
+	margin-left: 170px;
+	position: absolute;
 }
 
 #face_maki {
-	/*position: absolute; ########### This so everything is not moving*/
-	margin-top: -125px;
+	width: 1010px;
+	margin-top: -60px;
+	margin-left: 120px;
+	position: absolute;
 }
 
 #body_maki {
-	padding-left:20px;
-	margin-top: -10px;
+	width: 1010px;
+	height: auto;
+	margin-top: -50px;
+	margin-left: 128px;
+	position: absolute;
+}
+
+#mouth_maki {
+	margin-left: 271px;
+	margin-top: 138px;
+	position: absolute;
+	width: 55%;
+	height: 45%;
 }
 
 #feet_maki {
-	padding-left: 48px;
-	margin-top: -12px;
+	margin-left: 150px;
+	margin-top: 30px;
+	position: absolute;
+	width: 75%;
+	height: 75%;
 }
 
-#Maki .mouth{
-	padding-left: 143px;
-	padding-top: 30px;
+#acc_maki {
+	margin-left: 480px;
+	margin-top: 70px;
 	position: absolute;
+	width: 60%;
+	height: 60%;
 }
 
 
@@ -143,12 +223,12 @@ body {
 }
 
 #submit_btn{
-	margin-top: -630px;
+	margin-top: -80px;
 	margin-left: 1100px;
 }
 
 #exit_btn{
-	margin-top: 290px;
+	margin-top: 270px;
 	margin-left: 30px;
 }
 
