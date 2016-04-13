@@ -73,9 +73,12 @@ function setup(){
 		//Use the localhost one if running in on the laptop only
 		//Use the local IP if accessing it from tablet
 		
-		url: 'ws://192.168.0.21:9090'
+		//url: 'ws://192.168.0.21:9090'
 		//url: 'ws://192.168.5.52:9090'
 		//url: 'ws://localhost:9090'
+		//url: 'ws://10.120.114.241:9090'
+		url: 'ws://172.20.10.3:9090'
+
 	});
 
 	ros.on('connection',function(){
@@ -103,8 +106,8 @@ function setup(){
 	//hats map
 	mapHat[0] = "no hat";
 	mapHat[1] = "astrounaut helmet";
-	mapHat[2] = "wizard hat";
-	mapHat[3] = "clown hat";
+	mapHat[2] = "clown hat";
+	mapHat[3] = "wizard hat";
 	mapHat[4] = "dinosaur hat";
 
 	//mouth map
@@ -118,8 +121,8 @@ function setup(){
 	// face accessories map
 	mapFace[0] = "no face accessory";
 	mapFace[1] = "astronaut face accessory";
-	mapFace[2] = "wizard eye";
-	mapFace[3] = "clown face";
+	mapFace[2] = "clown face";
+	mapFace[3] = "wizard eye";
 
 	//clothes map
 	mapClothes[0] = "no costume";
@@ -190,7 +193,7 @@ function change_next_Mouth(){
 
 	x = x + 1;
 
-	if(x == 7)
+	if(x == 6)
 		x = 0;
 
 	console.log(x);
@@ -248,7 +251,7 @@ function change_next_Body(){
 
 	m = m + 1;
 
-	if(m == 6)
+	if(m == 5)
 		m = 0;
 	
 	console.log(m);
@@ -278,7 +281,7 @@ function change_next_Feet(){
 
 	n = n + 1;
 
-	if(n == 6)
+	if(n == 5)
 		n = 0;
 
 	console.log(n);
@@ -308,7 +311,7 @@ function change_next_Acc(){
 
 	y = y + 1;
 
-	if(y == 6)
+	if(y == 5)
 		y = 0;
 
 	console.log(y);
@@ -324,11 +327,11 @@ function submit(){
 	
 	var message = new ROSLIB.Message({
 		//Add by Xuan, 11, Feb		
-		data :  "Dress" + ',' + mapHat[i] + "," +
-			mapFace[j] + "," +
-			mapMouth[x] + "," +
-			mapClothes[m] + "," +
-			mapShoes[n] + "," +
+		data :  "Costume: " + "\n" + mapHat[i] + "\n" +
+			mapFace[j] + "\n" +
+			mapMouth[x] + "\n" +
+			mapClothes[m] + "\n" +
+			mapShoes[n] + "\n" +
 			mapAcc[y] 
 		/* 
 		//origin code
