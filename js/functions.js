@@ -35,7 +35,8 @@ var maki_face = [
 	"empty.png",
 	"face_astronaut.png",
 	"face_clown.png",
-	"face_wizard.png"
+	"face_wizard.png",	
+	"face_dinosaur.png"
 ];
 
 var maki_body = [
@@ -123,6 +124,7 @@ function setup(){
 	mapFace[1] = "astronaut face accessory";
 	mapFace[2] = "clown face";
 	mapFace[3] = "wizard eye";
+	mapFace[4] = "dino sunglasses";
 
 	//clothes map
 	mapClothes[0] = "no costume";
@@ -208,7 +210,7 @@ function change_prev_Face(){
 
 	j = j - 1;
 	if(j == -1)
-		j = 3;
+		j = 4;
 
 	console.log(j);
 	var face = maki_face[j];
@@ -221,7 +223,7 @@ function change_next_Face(){
 
 	j = j + 1;
 
-	if(j == 4)
+	if(j == 5)
 		j = 0;
 
 	console.log(j);
