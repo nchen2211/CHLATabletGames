@@ -431,3 +431,18 @@ body {
 	top: 250px;
 	width:400px;
 }
+
+/*######################## finish button #############################*/
+#finish{
+	-webkit-border-radius: 12;
+	-moz-border-radius: 12;
+	border-radius: 14px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 60px;
+	background: #3498db;
+	margin-left: 1000px;
+	margin-top: -150px;
+	text-decoration: none;
+	display: none;
+}
