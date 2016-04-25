@@ -8,20 +8,37 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: helvetica,arial,sans-serif;
     }
     canvas {
       display: block;
-      background: #ccc;
+    }
+    #finish{
+	-webkit-border-radius: 12;
+	-moz-border-radius: 12;
+	border-radius: 14px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 60px;
+	text-decoration: none;
+	margin-left: 1000px;
+	margin-top: 480px;
+	display: none;
+	position: absolute;
     }
   </style>
 </head>
 <body>
+<div id = "finish">
+	<a href = #><img src = "image/next_level.png" alt = "next level"/> 
+  </div>
   <canvas></canvas>
-<script>
 
+<script>
 var c = document.querySelector('canvas');
 var cx = c.getContext('2d');
+var background = new Image();
+background.src = "image/spray.jpg";
+
 var mousedown = false;
 var oldx = null;
 var oldy = null;
@@ -30,26 +47,41 @@ var shapepixels = null;
 
 function setupCanvas() {
 
-	c.height = 480;
-	c.width = 320;
-	cx.lineWidth = 20;
-	cx.lineCap = 'round';
+	c.height = 800;
+	c.width = 1300;
+	cx.drawImage(background,0,-120);
+	//cx.lineWidth = 20;
+	
+	/*cx.lineCap = 'round';
 	cx.strokeStyle = 'rgb(0, 0, 50)';
 	cx.font = 'bold 300px helvetica';
-	cx.fillStyle = 'rgb(255, 0, 0)';
-	drawletter();
+	cx.fillStyle = 'rgb(255, 0, 0)';*/
+	drawShape();
 	pixels = cx.getImageData(0,0, c.width, c.height);
 	shapepixels = getpixelamount(255,0,0);
 }
 
-function drawletter() {
+function drawShape() {
 
-	cx.fillRect(25,25,270,270);
+      var centerX = c.width / 2;
+      var centerY = c.height / 2;
+      var radius = 90;
+
+      cx.beginPath();
+      cx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      cx.fillStyle = 'rgba(0,0,150,0.3)';
+      cx.fill();
+      cx.lineWidth = 5;
+      cx.strokeStyle = 'rgb(0, 0, 50)';
+      cx.stroke();
+ 
+
+	//cx.fillRect(25,25,270,270);
 	//cx.clearRect(30,30,260,260);
 	//cx.strokeRect(25,25,260,260);
-  /*var centerx = (c.width - cx.measureText(letter).width) / 2;
-  var centery = c.height / 2;
-  cx.fillText(letter, centerx, centery);*/
+	/*var centerx = (c.width - cx.measureText(letter).width) / 2;
+	var centery = c.height / 2;
+	cx.fillText(letter, centerx, centery);*/
 };
 
 function showerror(){
@@ -105,10 +137,12 @@ function getpixelamount(r,g,b) {
 };
 
 function pixelthreshold() {
+
 	console.log(getpixelamount(0,0,50));
 	console.log(shapepixels);
-	if (getpixelamount(0,0,50) / shapepixels > 0.35) {
+	if (getpixelamount(0,0,50) / shapepixels > 0.75) {
 		alert ('you got it');
+		document.getElementById("finish").style.display = "inline";
 	}
 };
 
